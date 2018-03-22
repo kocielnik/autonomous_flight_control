@@ -1,7 +1,7 @@
 Quadrotor Autonomous Flight Control
 ===================================
 
-Event-driven implementation
+Event-driven architecture
 
 ![Flight](flight.gif)
 
