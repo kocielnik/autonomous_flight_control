@@ -9,4 +9,4 @@ Copyright 2018 Patryk Kocielnik
 
 MIT License
 
-Part of the Udacity Flying Car Nanodegree.
+Part of the Udacity Flying Car Nanodegree
