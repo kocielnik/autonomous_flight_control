@@ -42,15 +42,13 @@ class BackyardFlyer(Drone):
         # initial state
         self.flight_state = States.MANUAL
 
-        # TODO: Register all your callbacks here
+        # Registering callbacks:
         self.register_callback(MsgID.LOCAL_POSITION, self.local_position_callback)
         self.register_callback(MsgID.LOCAL_VELOCITY, self.velocity_callback)
         self.register_callback(MsgID.STATE, self.state_callback)
 
     def local_position_callback(self):
         """
-        TODO: Implement this method
-
         This triggers when `MsgID.LOCAL_POSITION` is received and self.local_position contains new data
         """
 
@@ -114,8 +112,6 @@ class BackyardFlyer(Drone):
 
     def velocity_callback(self):
         """
-        TODO: Implement this method
-
         This triggers when `MsgID.LOCAL_VELOCITY` is received and self.local_velocity contains new data
         """
 
@@ -128,8 +124,6 @@ class BackyardFlyer(Drone):
 
     def state_callback(self):
         """
-        TODO: Implement this method
-
         This triggers when `MsgID.STATE` is received and self.armed and self.guided contain new data
         """
 
@@ -156,16 +150,14 @@ class BackyardFlyer(Drone):
                 self.manual_transition()
 
     def calculate_box(self):
-        """TODO: Fill out this method
-        
+        """
         1. Return waypoints to fly a box
         """
 
         return self.all_waypoints
 
     def arming_transition(self):
-        """TODO: Fill out this method
-        
+        """
         1. Take control of the drone
         2. Pass an arming command
         3. Set the home location to current position
@@ -182,8 +174,7 @@ class BackyardFlyer(Drone):
         self.flight_state = States.ARMING
 
     def takeoff_transition(self):
-        """TODO: Fill out this method
-        
+        """
         1. Set target_position altitude to 3.0m
         2. Command a takeoff to 3.0m
         3. Transition to the TAKEOFF state
@@ -196,8 +187,7 @@ class BackyardFlyer(Drone):
         self.flight_state = States.TAKEOFF
 
     def waypoint_transition(self):
-        """TODO: Fill out this method
-    
+        """
         1. Command the next waypoint position
         2. Transition to WAYPOINT state
         """
@@ -216,8 +206,7 @@ class BackyardFlyer(Drone):
         self.flight_state = States.WAYPOINT
 
     def landing_transition(self):
-        """TODO: Fill out this method
-        
+        """
         1. Command the drone to land
         2. Transition to the LANDING state
         """
@@ -227,8 +216,7 @@ class BackyardFlyer(Drone):
         self.flight_state = States.LANDING
 
     def disarming_transition(self):
-        """TODO: Fill out this method
-        
+        """
         1. Command the drone to disarm
         2. Transition to the DISARMING state
         """
@@ -238,8 +226,7 @@ class BackyardFlyer(Drone):
         self.flight_state = States.DISARMING
 
     def manual_transition(self):
-        """This method is provided
-        
+        """
         1. Release control of the drone
         2. Stop the connection (and telemetry log)
         3. End the mission
@@ -253,8 +240,7 @@ class BackyardFlyer(Drone):
         self.flight_state = States.MANUAL
 
     def start(self):
-        """This method is provided
-        
+        """
         1. Open a log file
         2. Start the drone connection
         3. Close the log file
