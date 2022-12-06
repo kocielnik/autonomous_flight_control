@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+zip=linux-64bit.zip
+project=FCND-Simulator-Releases
+url=https://github.com/udacity/"$project"/releases/download/v0.1.1-sim/"$zip"
+
+wget -c "$url"
+
+mkdir -p ~/.local/share/fcnd-sim
+
+unzip "$zip" -d ~/.local/share/fcnd-sim
+
+ln -s ~/.local/share/fcnd-sim/FCND-Sim_Linux_64-bit ~/.local/bin/fcnd-sim
+
+rm "$zip"

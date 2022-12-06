@@ -1,0 +1,16 @@
+[tool.poetry]
+name = "autonomous-flight-control"
+version = "0.1.0"
+description = ""
+authors = ["Patryk Kocielnik <patryk@kocielnik.pl>"]
+readme = "README.md"
+packages = [{include = "autonomous_flight_control"}]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+numpy = "^1.23.5"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
